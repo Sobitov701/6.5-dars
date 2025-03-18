@@ -3,7 +3,9 @@ import useFetch from "../hooks/useFetch";
 import "../pages/pages.css";
 
 function Home() {
-  const { data, loading, error } = useFetch("https://dummyjson.com/products/");
+  const { data, loading, error } = useFetch(
+    "https://dummyjson.com/products?limit=194"
+  );
 
   if (loading) return <h2 className="loading">Loading...</h2>;
   if (error) return <h2 className="error">Error: {error.message}</h2>;
